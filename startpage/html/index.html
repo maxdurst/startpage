@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="../img/favicon.png" rel="shortcut icon" type="image/x-icon" />
+    <script>
+        function getTime() {
+            let date = new Date(),
+                min = date.getMinutes(),
+                sec = date.getSeconds(),
+                hour = date.getHours()%12;
+            if(hour == 0) {
+                hour = 12;
+            }
+            return "" + 
+                hour + ":" + 
+                (min < 10 ? ("0" + min) : min)
+                + ":" + (sec < 10 ? ("0" + sec) : sec);
+        }
+        window.onload = () => {
+            document.getElementById("clock").innerHTML = getTime();
+            setInterval( () => {
+                document.getElementById("clock").innerHTML = getTime();
+            },100);
+            document.getElementById("clock").focus();
+        }
+        function search(e) {
+            if (e.keyCode == 13) {
+                var val = document.getElementById("search-field").value;
+                window.location.replace("https://google.com/search?q=" + val);
+            }
+        }
+        document.addEventListener("keydown", event => {
+            if (event.keyCode == 32) {          // Spacebar code to open search
+                document.getElementById('search').style.display = 'flex';
+                document.getElementById('search-field').focus();
+            } else if (event.keyCode == 27) {   // Esc to close search
+                document.getElementById('search-field').value = '';
+                document.getElementById('search-field').blur();
+                document.getElementById('search').style.display = 'none';
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="search">
+        <input id="search-field" type="text" name="search-field" onkeypress="return search(event)"/>
+    </div>
+    <div class="container">
+<!--        <div class="quote">-->
+<!--            <p>Be uncommon amongst uncommon people. -David Goggins</p>-->
+<!--        </div>-->
+        <div class="clock">
+            <h1 id="clock">time</h1>
+        </div>
+        <div class="row">
+            <div class="categories">
+                <h1>school</h1>
+                <a href="https://windermereprep.instructure.com/">canvas</a>
+                <a href="https://drive.google.com/">drive</a>
+                <a href="https://inbox.google.com/">inbox</a>
+            </div>
+            <div class="categories">
+                <h1>reddit</h1>
+                <a href="https://www.reddit.com">front</a>
+                <a href="https://www.reddit.com/r/hiphopheads">hiphop</a>
+                <a href="https://www.reddit.com/r/changemyview">cmv</a>
+            </div>
+            <div class="categories">
+                <h1>youtube</h1>
+                <a href="https://www.youtube.com">home</a>
+                <a href="https://www.youtube.com/feed/trending">trending</a>
+                <a href="https://www.youtube.com/feed/subscriptions">subs</a>
+            </div>
+            <div class="categories">
+                <h1>news</h1>
+                <a href="http://www.drudgereport.com">drudge</a>
+                <a href="http://bleacherreport.com/">br</a>
+                <a href="https://playbeta.pocketcasts.com/web/podcasts">casts</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

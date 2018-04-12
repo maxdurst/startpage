@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Space+Mono');
+
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    width: 100vw;
+    background-color: #E1DED0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.clock {
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 60px;
+    color: #46676E;
+    line-height: 0px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Space Mono', monospace;
+    font-size: 1em;
+    justify-content: center;
+}
+
+.categories {
+    margin: 5px;
+    margin-left: 30px;
+    margin-right: 30px;
+    color: #699D8E;
+    display: flex;
+    flex-direction: column;
+}
+
+.categories a {
+    text-decoration:none;
+    color: #453C3C;
+/*    background-color: aqua;*/
+    margin: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
+    font-size: 2em;
+    font-weight: 900;
+}
+
+.categories a:hover {
+    font-style: italic;
+}
+
+#search {
+    width: 100%;
+    height: 100vh;
+    background-color: #E1DED0;
+    display: none;
+    position: absolute;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#search-field {
+    width: 90%;
+    padding: .75em 1em;
+    box-sizing: border-box;
+/*    background-color: #699D8E;*/
+    background-color: #E1DED0;
+/*    border: solid 5px #46676E;*/
+    border: solid 5px #E1DED0;
+    font-family: 'Space Mono', monospace;
+    font-size: 3rem;
+/*    color: #f2f2f2;*/
+    color: #46676E;
+    outline: none;
+/*    border-radius: 3px;*/
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+p {
+    font-family: 'Space Mono', monospace;
+    color: #46676E;
+    text-align: center;
+    font-size: 2em;
+}
